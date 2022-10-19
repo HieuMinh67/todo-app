@@ -31,7 +31,7 @@ jobs:
         uses: psf/black@22.3.0
   docker-build-push:
     runs-on: ubuntu-latest
-    needs: build-test
+    needs: run-test
     steps:
       - name: Checkout
         uses: actions/checkout@v3
