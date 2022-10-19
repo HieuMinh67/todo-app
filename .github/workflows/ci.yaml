@@ -64,6 +64,6 @@ jobs:
           echo "checkout main branch"
           git checkout main
           echo "updating image tag in values file"
-          sed -i "s,tag:.*,tag:\ ${{ github.sha }}," helm/webapp/values.yaml
+          sed -i "s,tag:.*,tag:\ ${{ github.sha }}," helm/todo-app/values.yaml
           git add . && git commit -m "update image tag"
           git push
