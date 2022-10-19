@@ -48,7 +48,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: Dockerfile
           push: true
           tags: hieupham0607/todo-app:${{github.sha}}
   update-manifests:
