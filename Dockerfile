@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.9.6-alpine
+FROM python:3.10.7-slim
 
 # set work directory
 WORKDIR /usr/src/app
@@ -15,6 +15,11 @@ COPY ./requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 
-COPY . .
-CMD python manage.py migrate
+COPY ./accounts accounts
+COPY ./api api
+COPY ./lists lists
+COPY ./todolist todolist
+COPY ./manage.py .
+RUN python manage.py migrate
+
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
