@@ -3,7 +3,7 @@ name: CI Workflow
 env:
   CONFIG_REPO_NAME: argocd-app-config
 
-on:
+"on":
   push:
     branches:
       - 'master'
